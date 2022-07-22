@@ -85,7 +85,7 @@ const style = StyleSheet.create({
   },
   FooterMainStyle: {
     height: (height / 100) * 30,
-    backgroundColor: 'red',
+    // backgroundColor: 'red',
   },
   FooterTextStyle: {
     fontSize: Theme.fontSizes.big,

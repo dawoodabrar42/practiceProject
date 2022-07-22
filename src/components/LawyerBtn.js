@@ -14,28 +14,26 @@ export const LawyerBtn = ({
 }) => {
   return (
     <View style={[style.mainView]}>
-      <TouchableOpacity
-        onPress={onPress}
-        style={[style.touchableView, {backgroundColor: backgroundColor}]}>
+      <View style={[style.touchableView, {backgroundColor: backgroundColor}]}>
         <Text style={style.text}>{txt}</Text>
         <Text style={style.title}>{title}</Text>
-      </TouchableOpacity>
+      </View>
     </View>
   );
 };
 
 const style = StyleSheet.create({
   mainView: {
-    backgroundColor: '#faf',
-    width: '40%',
+    // backgroundColor: '#faf',
+    width: '45%',
     height: '100%',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
   },
   touchableView: {
     // backgroundColor: '#114D96',
     height: '60%',
-    width: '100%',
+    width: '95%',
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 10,
@@ -53,7 +51,7 @@ const style = StyleSheet.create({
   },
   title: {
     color: '#fff',
-    fontSize: Theme.fontSizes.medium,
+    fontSize: Theme.fontSizes.xmedium,
     // marginLeft: moderateScale(6),
   },
 });
