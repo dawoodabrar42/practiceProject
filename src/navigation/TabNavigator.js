@@ -2,7 +2,7 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icons from 'react-native-vector-icons/Ionicons';
 import Octicons from 'react-native-vector-icons/Octicons';
-import {Dummy} from '../screen/dummy/Dummy';
+import {Dummy, Notification} from '../screen/dummy/Notification';
 import {Dummy1} from '../screen/dummy/Dummy1';
 import {Dummy2} from '../screen/dummy/Dummy2';
 import DrawerNavigator from './DrawerNavigator';
@@ -28,8 +28,8 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="Dummy"
-        component={Dummy}
+        name="Dummy1"
+        component={Dummy1}
         options={{
           headerShown: false,
           tabBarIcon: ({color}) => (
@@ -38,8 +38,8 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="Dummy1"
-        component={Dummy1}
+        name="Notification"
+        component={Notification}
         options={{
           headerShown: false,
           tabBarIcon: ({color}) => (

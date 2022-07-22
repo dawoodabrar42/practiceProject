@@ -4,14 +4,14 @@ import {Card} from '../../components/Card';
 import {NavHeader} from '../../components/NavHeader';
 import {CardButton} from '../../components/CardButton';
 import style from './style';
-export const List = () => {
+export const List = ({navigation}) => {
   const [isActive, setActive] = useState(false);
   const [visible, setVisible] = useState(false);
   const [Data, setData] = useState([
     {
       id: '1',
       name: 'William',
-      phone: '+122344',
+      phone: '+1',
       email: 'bradelysimon98@gmail.com',
       employee: 'Employment Lawyer',
       img: require('../../assets/man.png'),
@@ -20,8 +20,8 @@ export const List = () => {
     },
     {
       id: '2',
-      name: 'William',
-      phone: '+122344',
+      name: 'Hamad',
+      phone: '+2',
       email: 'bradelysimon98@gmail.com',
       employee: 'Employment Lawyer',
       img: require('../../assets/man.png'),
@@ -30,8 +30,8 @@ export const List = () => {
     },
     {
       id: '3',
-      name: 'William',
-      phone: '+122344',
+      name: 'Ali',
+      phone: '+3',
       email: 'bradelysimon98@gmail.com',
       employee: 'Employment Lawyer',
       img: require('../../assets/man.png'),
@@ -40,8 +40,8 @@ export const List = () => {
     },
     {
       id: '4',
-      name: 'William',
-      phone: '+122344',
+      name: 'Hassan',
+      phone: '+4',
       email: 'bradelysimon98@gmail.com',
       employee: 'Employment Lawyer',
       img: require('../../assets/man.png'),
@@ -50,8 +50,8 @@ export const List = () => {
     },
     {
       id: '5',
-      name: 'William',
-      phone: '+122344',
+      name: 'Usman',
+      phone: '+534556677788',
       email: 'bradelysimon98@gmail.com',
       employee: 'Employment Lawyer',
       img: require('../../assets/man.png'),
@@ -74,10 +74,22 @@ export const List = () => {
 
   return (
     <View style={style.mainContainer}>
-      <NavHeader title={'Manage Lawyers'} leftIc={'arrow-back'} />
+      <NavHeader
+        title={'Manage Lawyers'}
+        leftIc={'arrow-back'}
+        leftPressed={() => {
+          navigation.goBack();
+        }}
+      />
       <View style={style.ButtonStyle}>
         <Text style={style.textStyle}>Manage Lawyers</Text>
-        <CardButton txt={'Add Lawyer'} ic={'add-outline'} />
+        <CardButton
+          txt={'Add Lawyer'}
+          ic={'add-outline'}
+          onPress={() => {
+            navigation.navigate('AddLawayer');
+          }}
+        />
       </View>
       <View style={style.flatListStyle}>
         <FlatList
@@ -88,6 +100,15 @@ export const List = () => {
           renderItem={({item, index}) => {
             return (
               <Card
+                onPress={() => {
+                  navigation.navigate('LawyerInfo', {
+                    name: item.name,
+                    phone: item.phone,
+                    employee: item.employee,
+                    img: item.img,
+                    email: item.email,
+                  });
+                }}
                 txt={item.name}
                 source={item.img}
                 employee={item.employee}

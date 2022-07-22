@@ -43,7 +43,11 @@ export const HomeScreen = ({navigation}) => {
       {/* buttomView */}
       <View style={style.BottomMainView}>
         {/* button1 */}
-        <TouchableOpacity style={style.buttonOneStyle}>
+        <TouchableOpacity
+          style={style.buttonOneStyle}
+          onPress={() => {
+            navigation.navigate('List');
+          }}>
           <HomeBtn
             height={170}
             width={'65%'}

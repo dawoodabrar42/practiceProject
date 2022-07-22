@@ -21,7 +21,7 @@ import {Btn} from '../../components/Btn';
 import {AppBtn} from '../../components/AppBtn';
 import style from './style';
 const {height, width} = Dimensions.get('window');
-export const AddLawayer = () => {
+export const AddLawayer = ({navigation}) => {
   const [text, setText] = useState(require('../../assets/man.png'));
   const [image, setImage] = useState('');
   const [isActive, setActive] = useState(false);
@@ -43,7 +43,13 @@ export const AddLawayer = () => {
   return (
     <ScrollView>
       <View style={style.mainContainer}>
-        <NavHeader leftIc={'arrow-back'} title={'Add lawyer'} />
+        <NavHeader
+          leftIc={'arrow-back'}
+          title={'Add lawyer'}
+          leftPressed={() => {
+            navigation.goBack();
+          }}
+        />
         {/* ImagePicker */}
         <View style={style.ImagePickerStyle}>
           <Image

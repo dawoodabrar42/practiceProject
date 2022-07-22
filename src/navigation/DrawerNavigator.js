@@ -1,7 +1,7 @@
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {HomeScreen} from '../screen/homeScreen/HomeScreen';
-import {Dummy} from '../screen/dummy/Dummy';
+import {Dummy, Notification} from '../screen/dummy/Notification';
 import {Dummy1} from '../screen/dummy/Dummy1';
 import {CustomDrawer} from '../components/CustomDrawer';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -37,7 +37,7 @@ const DrawerNavigator = () => {
       />
       <Drawer.Screen
         name="Notifications"
-        component={Dummy}
+        component={Notification}
         options={{
           headerShown: false,
           drawerIcon: ({color}) => (

@@ -28,9 +28,13 @@ export const Card = ({
   backgroundColor,
   right,
   left,
+  onPress,
 }) => {
   return (
-    <View style={style.cardMainContainer}>
+    <TouchableOpacity
+      style={style.cardMainContainer}
+      onPress={onPress}
+      activeOpacity={0.9}>
       <View style={style.cardContainer}>
         <View style={style.headerView}>
           {/* imageView */}
@@ -97,6 +101,7 @@ export const Card = ({
             <Text
               style={{
                 left: left,
+                color: 'white',
               }}>
               {title}
             </Text>
@@ -117,7 +122,7 @@ export const Card = ({
           </View>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 const style = StyleSheet.create({
@@ -131,7 +136,7 @@ const style = StyleSheet.create({
     width: (width / 100) * 90,
     backgroundColor: 'white',
     borderRadius: 15,
-    borderWidth: 1.5,
+    // borderWidth: 1.5,
     elevation: 10,
     overflow: 'hidden',
     marginBottom: moderateScale(10),

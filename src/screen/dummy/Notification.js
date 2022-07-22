@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, FlatList} from 'react-native';
 import Theme from '../../../Theme/Theme';
 import {NavHeader} from '../../components/NavHeader';
 import {NotiCard} from '../../components/NotiCard';
-export const Dummy = () => {
+export const Notification = ({navigation}) => {
   const [Data, setData] = useState([
     {
       id: '1',
@@ -43,7 +43,13 @@ export const Dummy = () => {
   ]);
   return (
     <View style={style.mainView}>
-      <NavHeader leftIc={'arrow-back'} title={'Notifications'} />
+      <NavHeader
+        leftIc={'arrow-back'}
+        title={'Notifications'}
+        leftPressed={() => {
+          navigation.goBack();
+        }}
+      />
       <FlatList
         showsVerticalScrollIndicator={false}
         keyExtractor={(item, index) => index.toString()}

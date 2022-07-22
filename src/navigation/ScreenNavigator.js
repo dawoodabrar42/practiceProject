@@ -10,40 +10,25 @@ import {SplashScreen} from '../screen/splashScreen/SplashScreen';
 import TabNavigator from './TabNavigator';
 import {List} from '../screen/list/List';
 import {AddLawayer} from '../screen/addLawayer/AddLawayer';
-import { Dummy } from '../screen/dummy/Dummy';
-import { LawyerInfo } from '../screen/lawyerInfo.js/LawyerInfo';
-import { Dummy1 } from '../screen/dummy/Dummy1';
+import {Dummy} from '../screen/dummy/Notification';
+import {LawyerInfo} from '../screen/lawyerInfo.js/LawyerInfo';
+import {Dummy1} from '../screen/dummy/Dummy1';
 const Stack = createNativeStackNavigator();
 
 const ScreenNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen
-          name="Dummy1"
-          component={Dummy1}
-          options={{headerShown: false}}
-        /> */}
-        <Stack.Screen
-          name="LawyerInfo"
-          component={LawyerInfo}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="Dummy"
-          component={Dummy}
-          options={{headerShown: false}}
-        />
         <Stack.Screen
           name="SplashScreen"
           component={SplashScreen}
           options={{headerShown: false}}
         />
-        {/* <Stack.Screen
+        <Stack.Screen
           name="TabNavigator"
           component={TabNavigator}
           options={{headerShown: false}}
-        /> */}
+        />
         <Stack.Screen
           name="HomeScreen"
           component={TabNavigator}
@@ -63,6 +48,11 @@ const ScreenNavigator = () => {
         <Stack.Screen
           name="List"
           component={List}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="LawyerInfo"
+          component={LawyerInfo}
           options={{headerShown: false}}
         />
         <Stack.Screen
